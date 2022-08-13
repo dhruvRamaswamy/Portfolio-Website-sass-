@@ -1,0 +1,128 @@
+.container {
+    max-width: $website-width;
+    padding: 0 1.5rem;
+    margin: auto;
+    overflow: hidden;
+}
+
+// Buttons
+
+%btn-shared {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+
+    // Notice the 'all' keyword. idk if i like to transition everything because it sometimes gets a bit trippy but I'll keep it for now
+    transition: all 0.5s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn {
+    &-main {
+        @extend %btn-shared;
+        color: #333;
+        background-color: $main-color;
+    }
+
+    &-light {
+        @extend %btn-shared;
+        color: #333;
+        background-color: $light-color;
+    }
+
+    &-dark {
+        @extend %btn-shared;
+        color: #f4f4f4;
+        background-color: $dark-color;
+    }
+}
+
+// This is basically saying that any 'button' or anchor tag with a class that has the characters "btn-" somewhere in the name, we select the hover. Trippy, right? The '^=' is the character that does this.
+button[class^='btn-']:hover,
+a[class^='btn-']:hover,
+input[class^='btn-'] {
+    background-color: $main-color;
+}
+
+.lead {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+//Padding classes
+
+.py {
+    &-1 {
+        padding: 1rem 0;
+    }
+
+    &-2 {
+        padding: 2rem 0;
+    }
+
+    &-3 {
+        padding: 3rem 0;
+    }
+
+    &-4 {
+        padding: 4rem 0;
+    }
+}
+
+// Margin Classes
+
+.my {
+    &-1 {
+        margin: 1rem 0;
+    }
+
+    &-2 {
+        margin: 2rem 0;
+    }
+
+    &-3 {
+        margin: 3rem 0;
+    }
+
+    &-4 {
+        margin: 4rem 0;
+    }
+}
+
+// Line function
+
+.line {
+        width: 8rem;
+        height: 2px;
+        background-color: $main-color;
+        // Be sure to make it block
+        display: block;
+        //Again, this is the code that centers it. No need to mess with containers/flex/grid etc
+        margin: 7px auto;
+    }
+
+// Sections titles
+
+.section-title {
+    font-size: 2rem;
+    display: block;
+    text-align: center;
+    font-weight: 100;
+    text-transform: uppercase;
+}
+
+*[class^='zoom-'] {
+    transform: scale(2);
+}
+
+.sm-icon {
+    width: $sm-icon-size;
+    height: $sm-icon-size;
+}
+
+
+

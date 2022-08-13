@@ -1,4 +1,233 @@
 // Notice how you don't even need the '_' of the scss file
 @import 'config';
-@import 'general';
+@import 'utilities';
 
+// General Styles
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Dosis', sans-serif;
+    line-height: 1.6;
+    background: $light-color;
+
+}
+
+a {
+    text-decoration: none;
+    color: $dark-color;
+}
+
+ul {
+    list-style: none;
+}
+
+h2,
+h3,
+h4 {
+    text-transform: uppercase;
+}
+
+img {
+    width: 100%;
+}
+
+
+// Logo
+
+#logo {
+    width: 70px;
+    height: 70px;
+    color: white;
+    text-transform: uppercase;
+}
+
+//Main nav
+
+#main-nav {
+    display: flex;
+
+    //The reason you do this is to put the nav on the right and the logo on the left
+    justify-content: space-between;
+    padding-top: 1rem;
+
+    ul {
+        display: flex;
+        color: white;
+        flex-direction: row;
+        //align-items actually was a bit off
+        margin-top: 20px;
+
+        // Normally I would use the flex-gap property, but it still (at the time of writing this) has a 91% adoption rate among browesers. While htis is better, it still isn't enough. I am sorry to my future self and will have to use this stupid hack.
+
+        $margin-links: 3rem;
+
+        &>* {
+            margin-right: $margin-links;
+        }
+
+        // Notice the li a selectof
+        a {
+            color: white;
+            text-transform: uppercase;
+            // The transparent part of that is important
+            border-bottom: 2px transparent solid;
+            transition: border-color 0.5s;
+            padding-bottom: 0.5rem;
+
+            &:hover {
+                border-color: $medium-color;
+            }
+
+            // The current page will have these styles
+            &.current {
+                border-color: $main-color;
+            }
+        }
+
+    }
+}
+
+//Header
+
+#header {
+
+    // Header home, the container of the header. Note that you don't have to put the '#' symbol because thats already the parent. Just a bit trippy
+    &-home {
+        // Cover means that the image wiil stretch the entire container (width and height)
+        background: $bg-image no-repeat center right / cover;
+        height: 100vh;
+        color: white;
+
+        //Header-content
+        .header-content {
+            text-align: center;
+            padding-top: 20%;
+
+        }
+
+        h1 {
+            font-size: 3rem;
+        }
+
+        a[class^='btn'] {
+            font-weight: 700;
+        }
+    }
+
+    // Header Inner
+
+    &-inner {}
+
+}
+
+#home {
+
+    // Home section A, I specialize in
+    &-a {
+        .specials {
+            margin-top: 3rem;
+            display: grid;
+            grid-gap: 1.5rem;
+            grid-template-columns: repeat(4, 1fr);
+
+            .fas {
+                color: $main-color;
+                padding-bottom: 0.4rem;
+            }
+        }
+    }
+
+    // Home section B, all the stats
+
+    &-b {
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+            li {
+                line-height: 2;
+
+                &.stats-title {
+                    font-size: 1.5rem;
+                }
+
+                &.stats-number {
+                    font-size: 2rem;
+                    font-weight: bold;
+                }
+            }
+
+            div {
+                padding: 3rem 0;
+                &:nth-child(odd) {
+                    background: $lighter-color;
+                }
+
+                &:nth-child(even) {
+                    background: $medium-color;
+                }
+            }
+        }
+    }
+
+    &-c {
+        .process {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            text-align: center;
+
+            & > div {
+                padding: 1rem
+            }
+
+            // Process step number
+            &-step {
+                position: absolute;
+                top: -5px;
+                right: -5px;
+                font-size: 28px;
+                background: $main-color;
+                border-radius: 50%;
+                height: 15px;
+                width: 15px;
+                line-height: 15px;
+                padding: 1rem;
+                transition: all 1s;
+            }
+
+            // The styles for all the icons
+            &-icon {
+                $size: 70px;
+                border-radius: 50%;
+                background-color: $dark-color;
+                color: white;
+                padding: 2rem;
+                width: $size;
+                height: $size;
+                // Centers it a bit better. In this case you are better off actually making an svg circle the background. But ig in this case not really?
+                line-height: $size;
+                text-align: center;
+                position: relative;
+                transition: all 1s;
+
+                &:hover {
+                    background: $main-color;
+                    .process-step{
+                        background-color: $dark-color;
+                        $size: 25px;
+                        width: $size;
+                        height: $size;
+                        line-height: $size;
+                    }
+                }
+            }
+        }
+    }
+}

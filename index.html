@@ -1,19 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>John Doe</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dosis" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dosis"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-    <h1>Hello</h1>
-</body>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="header-home">
+      <div class="container">
+        <nav id="main-nav">
+          <img src="img/logo.png" alt="My portfolio" id="logo" />
+          <ul>
+            <li><a href="index.html" class="current">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-content">
+          <!-- For the typing effect we add a span so that the javascript has something to latch onto -->
+          <h1>
+            I Am John The
+            <span
+              class="txt-type"
+              data-wait="3000"
+              data-words='["Ice cream man", "one who knocks", "one who disappears to get the milk"]'
+            ></span>
+          </h1>
+          <p class="lead">I specialize in your mom and getting the milk</p>
+          <a href="work.html" class="btn-light">View my work</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Section A  Specialise-->
+
+    <section id="home-a" class="text-center py-2">
+      <div class="container">
+        <h2 class="section-title">I specialize in</h2>
+        <!-- This is going to be an orange line below-->
+        <div class="line"></div>
+        <p class="lead">
+          Photography as well as creating digital masterpieces and UI/UX layouts
+          for websites and mobile applications.
+        </p>
+        <div class="specials">
+          <div>
+            <i class="fas fa-file-alt fa-2x"></i>
+            <h3>Concepting</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Distinctio perspiciatis quas enim? Perspiciatis totam porro nisi.
+              Ipsa quae aliquid fugiat!
+            </p>
+          </div>
+          <div>
+            <i class="fas fa-desktop fa-2x"></i>
+            <h3>UI/UX</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Distinctio perspiciatis quas enim? Perspiciatis totam porro nisi.
+              Ipsa quae aliquid fugiat!
+            </p>
+          </div>
+          <div>
+            <i class="fas fa-object-ungroup fa-2x"></i>
+            <h3>Visual Design</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Distinctio perspiciatis quas enim? Perspiciatis totam porro nisi.
+              Ipsa quae aliquid fugiat!
+            </p>
+          </div>
+          <div>
+            <i class="fas fa-thumbs-up fa-2x"></i>
+            <h3>Interaction</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Distinctio perspiciatis quas enim? Perspiciatis totam porro nisi.
+              Ipsa quae aliquid fugiat!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section B: Stats -->
+
+    <section id="home-b" class="text-center py-2">
+      <div class="stats">
+        <div>
+          <ul>
+            <li><i class="fas fa-users fa-3x"></i></li>
+            <li class="stats-title">Clients</li>
+            <li class="stats-number">100</li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li><i class="fas fa-award fa-3x"></i></li>
+            <li class="stats-title">Awards</li>
+            <li class="stats-number">3</li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li><i class="fas fa-hourglass-start fa-3x"></i></li>
+            <li class="stats-title">Hours Worked</li>
+            <li class="stats-number">3500</li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li><i class="fas fa-code-branch fa-3x"></i></li>
+            <li class="stats-title">Projects completed</li>
+            <li class="stats-number">135</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section C: Process -->
+
+    <section id="home-c" class="text-center py-2">
+      <div class="container">
+         <h2 class="section-title">
+            My Creative Process
+         </h2>
+         <div class="line"></div>
+         <p class="lead">All of my UI/UX and design projects are based off of a practiced formula to get the result I am looking for. </p>
+         <!-- This is the container for the divs which has the process -->
+         <div class="process">
+            <div>
+               <!-- Why is the "process-step" div in the i tag? So that we can put   the number text to the fas icon-->
+               <i class="fas fa-file-alt fa-4x process-icon my-2">
+                  <div class="process-step">1</div>
+               </i>
+                  <h3>Discuss The Project</h3>
+                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.  Adipisci et id quasi, laborum voluptate accusantium?</p>
+            </div>
+            <div>
+               <i class="fas fa-desktop fa-4x process-icon my-2">
+                  <div class="process-step">2</div>
+               </i>
+                  <h3>Brainstorming ^ Concept</h3>
+                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci   et id quasi, laborum voluptate accusantium?</p>
+            </div>
+            <div>
+               <i class="fas fa-object-ungroup fa-4x process-icon my-2">
+                  <div class="process-step">3</div>
+               </i>
+                  <h3>UI/UX Planning</h3>
+                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci     et id quasi, laborum voluptate accusantium?</p>
+            </div>
+            <div>
+               <i class="fas fa-thumbs-up fa-4x process-icon my-2">
+                  <div class="process-step">4</div>
+               </i>
+                  <h3>Interaction</h3>
+                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci et    id quasi, laborum voluptate accusantium?</p>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!-- Footer -->
+
+   <footer id="main-footer">
+    <div class="footer-content container">
+      <p>Copyright &copy; 2022. All rights reserved</p>
+      <div class="social">
+        <a href="trash.html"><img class="sm-icon sm-facebook" src="img/smicons/facebook-f-brands.svg" alt="facebook"></a>
+        <a href="https://www.instagram.com/"><img class="sm-icon sm-instagram" src="img/smicons/instagram-brands.svg" alt="instagram"></a>
+        <a href="https://www.linkedin.com/notifications/"><img class="sm-icon sm-linkedin" src="img/smicons/linkedin-in-brands.svg" alt="linkedin"></a>
+        <a href="https://github.com/dhruvRamaswamy"><img class="sm-icon sm-github" src="img/smicons/github-brands.svg" alt="instagram"></a>
+      </div>
+    </div>
+   </footer>
+    <script src="js/typewriter.js"></script>
+  </body>
 </html>
