@@ -7,4 +7,12 @@ $lighter-color: hsl(0, 7%, 89%);
 $medium-color: hsl(0, 0%, 80%);
 $dark-color: hsl(0, 0%, 20%);
 $bg-image: url('../img/showcase.jpg');
-$sm-icon-size: 40px;
+
+
+@function set-text-color($color) {
+    @if(lightness($color) > 50) {
+        @return #000;
+    } @else {
+        @return #fff;
+    }
+}

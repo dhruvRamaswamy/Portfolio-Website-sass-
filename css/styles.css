@@ -83,15 +83,6 @@ input[class^=btn-] {
   text-transform: uppercase;
 }
 
-*[class^=zoom-] {
-  transform: scale(2);
-}
-
-.sm-icon {
-  width: 40px;
-  height: 40px;
-}
-
 *,
 *::before,
 *::after {
@@ -251,9 +242,29 @@ img {
   line-height: 25px;
 }
 
-.main-footer .container {
+#main-footer {
+  background: hsl(0deg, 0%, 20%);
+}
+#main-footer .footer-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  color: white;
+  height: 6rem;
+  align-items: center;
+}
+#main-footer .footer-content .fa-brands {
+  color: white;
+  margin-right: 1rem;
+  padding: 0.5rem;
+  line-height: 100%;
+  transition: all 0.2s ease-in;
+}
+#main-footer .footer-content .fa-brands:hover {
+  color: hsl(44deg, 100%, 50%);
+}
+#main-footer .footer-content .social {
+  display: flex;
   justify-content: flex-end;
 }
 

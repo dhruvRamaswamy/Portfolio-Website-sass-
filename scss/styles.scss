@@ -231,3 +231,39 @@ img {
         }
     }
 }
+
+
+//Footer
+
+#main-footer{
+
+    background: $dark-color;
+
+    & .footer-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: space-between;
+        color: white;
+        height: 6rem;
+        align-items: center;
+
+        //Social media icons
+        & .fa-brands {
+            color: white;
+            margin-right: 1rem;
+            padding: 0.5rem;
+            line-height: 100%;
+            transition: all 0.2s ease-in;
+
+            &:hover {
+                color: $main-color;
+            }
+
+        }
+
+        & .social {
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+}
