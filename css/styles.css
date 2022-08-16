@@ -23,13 +23,30 @@
 }
 .btn-dark {
   color: #f4f4f4;
-  background-color: hsl(0deg, 0%, 20%);
+  background-color: hsl(20deg, 0%, 10%);
 }
 
 button[class^=btn-]:hover,
 a[class^=btn-]:hover,
 input[class^=btn-] {
   background-color: hsl(44deg, 100%, 50%);
+}
+
+.bg-main {
+  background: hsl(44deg, 100%, 50%);
+  color: #fff;
+}
+.bg-dark {
+  background: hsl(20deg, 0%, 10%);
+  color: #fff;
+}
+.bg-light {
+  background: hsl(0deg, 0%, 96%);
+  color: #000;
+}
+.bg-medium {
+  background: hsl(0deg, 0%, 80%);
+  color: #000;
 }
 
 .lead {
@@ -83,6 +100,87 @@ input[class^=btn-] {
   text-transform: uppercase;
 }
 
+.progress-bar {
+  height: 20px;
+  background: hsl(0deg, 0%, 80%);
+  border-radius: 5px;
+  margin-bottom: 0.6rem;
+}
+.progress-bar div {
+  height: 100%;
+  background-color: hsl(44deg, 100%, 50%);
+  border-radius: 5px;
+}
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.3);
+}
+
+.item {
+  position: relative;
+  background: hsl(44deg, 100%, 50%);
+  overflow: hidden;
+}
+.item::after {
+  content: "";
+  position: absolute;
+  display: block;
+  background: inherit;
+  opacity: 0.9;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(2) translateX(-75%) translateY(-75%) rotate(-28deg);
+  transition: transform 3s cubic-bezier(0.2, 1, 0.3, 1);
+}
+.item:hover:after {
+  transform: scale(2) translateX(0) translateY(0) rotate(-28deg);
+}
+.item:hover .item-image {
+  transform: scale(1.2);
+}
+.item:hover .item-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+.item-image {
+  height: auto;
+  transition: transform 750ms cubic-bezier(0.2, 1, 0.3, 1);
+}
+.item-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  z-index: 1;
+  color: #fff;
+  transform: translateY(-20%);
+  transition: opacity 500ms cubic-bezier(0.2, 1, 0.3, 1), transform 500ms cubic-bezier(0.2, 1, 0.3, 1);
+  transition-delay: 300ms;
+}
+.item-text-wrap {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.item-text-title {
+  font-size: 2rem;
+  padding: 0 1rem;
+  margin: 5px 0 0 0;
+}
+.item-text-category {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  opacity: 0.7;
+  margin: 0;
+}
+
 *,
 *::before,
 *::after {
@@ -98,7 +196,7 @@ body {
 
 a {
   text-decoration: none;
-  color: hsl(0deg, 0%, 20%);
+  color: hsl(20deg, 0%, 10%);
 }
 
 ul {
@@ -165,6 +263,12 @@ img {
 #header-home a[class^=btn] {
   font-weight: 700;
 }
+#header-inner {
+  background: url("../img/showcase.jpg") no-repeat 20% 30%/cover;
+  height: 5.5rem;
+  border-bottom: 3px solid hsl(44deg, 100%, 50%);
+}
+
 #home-a .specials {
   margin-top: 3rem;
   display: grid;
@@ -222,7 +326,7 @@ img {
 }
 #home-c .process-icon {
   border-radius: 50%;
-  background-color: hsl(0deg, 0%, 20%);
+  background-color: hsl(20deg, 0%, 10%);
   color: white;
   padding: 2rem;
   width: 70px;
@@ -236,14 +340,75 @@ img {
   background: hsl(44deg, 100%, 50%);
 }
 #home-c .process-icon:hover .process-step {
-  background-color: hsl(0deg, 0%, 20%);
+  background-color: hsl(20deg, 0%, 10%);
   width: 25px;
   height: 25px;
   line-height: 25px;
 }
 
+#about-a .about-info {
+  display: grid;
+  grid-template-areas: "bioimage bio bio" "aw1 aw2 aw3";
+  gap: 1.2rem;
+}
+#about-a .bio-image {
+  grid-area: bioimage;
+}
+#about-a .bio {
+  background: hsl(0deg, 7%, 89%);
+  border-left: 3px solid hsl(44deg, 100%, 50%);
+  padding: 10px;
+  grid-area: bio;
+}
+#about-a .award {
+  padding-top: 20px;
+}
+#about-a .award i {
+  color: hsl(44deg, 100%, 50%);
+  margin: 10px;
+}
+#about-a .award-1 {
+  grid-area: "aw1";
+}
+#about-a .award-2 {
+  grid-area: "aw2";
+}
+#about-a .award-3 {
+  grid-area: "aw3";
+}
+#about-c .about-logo {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+#about-c .about-logo img {
+  width: 70%;
+  justify-self: center;
+}
+#about-d .testimonials {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+#about-d .testimonials div img {
+  border-radius: 50%;
+  width: 50px;
+}
+#about-d .testimonials div p {
+  padding: 5px;
+  border: 2px dashed hsl(0deg, 7%, 89%);
+}
+#about-d .testimonials div ul {
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+}
+#about-d .testimonials div ul li:nth-child(2) {
+  margin-left: 10px;
+}
+
 #main-footer {
-  background: hsl(0deg, 0%, 20%);
+  background: hsl(20deg, 0%, 10%);
 }
 #main-footer .footer-content {
   display: grid;

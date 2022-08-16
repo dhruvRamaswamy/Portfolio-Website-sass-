@@ -44,6 +44,28 @@ input[class^='btn-'] {
     background-color: $main-color;
 }
 
+//Backgrounds
+.bg {
+    &-main {
+        background: $main-color;
+        color: set-text-color($main-color);
+    }
+    &-dark {
+        background: $dark-color;
+        color: set-text-color($dark-color); 
+    }
+    &-light {
+        background: $light-color;
+        color: set-text-color($light-color);
+    }
+    &-medium {
+        background: $medium-color;
+        color: set-text-color($medium-color);
+    }
+
+    
+}
+
 .lead {
     font-size: 1.3rem;
     margin-bottom: 2rem;
@@ -113,6 +135,25 @@ input[class^='btn-'] {
     text-align: center;
     font-weight: 100;
     text-transform: uppercase;
+}
+
+//Progress bars
+
+.progress-bar {
+    //To make it contained
+    // overflo;
+    height: 20px;
+    background: $medium-color;
+    border-radius: 5px;
+    margin-bottom: 0.6rem;
+
+    div {
+        // Fills the container
+        height: 100%;
+        // text-align: center;
+        background-color: $main-color;
+        border-radius: 5px;
+    }
 }
 
 

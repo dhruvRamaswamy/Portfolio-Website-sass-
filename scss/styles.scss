@@ -1,6 +1,7 @@
 // Notice how you don't even need the '_' of the scss file
 @import 'config';
 @import 'utilities';
+@import 'item_grid';
 
 // General Styles
 
@@ -37,6 +38,7 @@ img {
     width: 100%;
 }
 
+//Just notice in general that you dont have different id's for each section of the page, you reuse them.
 
 // Logo
 
@@ -122,7 +124,12 @@ img {
 
     // Header Inner
 
-    &-inner {}
+    &-inner {
+        // THe percentages move the background image around
+        background: $bg-image no-repeat 20% 30% / cover;
+        height: 5.5rem;
+        border-bottom: 3px solid $main-color;
+    }
 
 }
 
@@ -165,6 +172,7 @@ img {
 
             div {
                 padding: 3rem 0;
+
                 &:nth-child(odd) {
                     background: $lighter-color;
                 }
@@ -183,7 +191,7 @@ img {
             gap: 1rem;
             text-align: center;
 
-            & > div {
+            &>div {
                 padding: 1rem
             }
 
@@ -219,7 +227,8 @@ img {
 
                 &:hover {
                     background: $main-color;
-                    .process-step{
+
+                    .process-step {
                         background-color: $dark-color;
                         $size: 25px;
                         width: $size;
@@ -230,12 +239,114 @@ img {
             }
         }
     }
+
+
 }
 
+//About Sections
+
+#about {
+    //About A
+    &-a {
+        & .about-info {
+            display: grid;
+            grid-template-areas:
+                'bioimage bio bio'
+                'aw1 aw2 aw3';
+            gap: 1.2rem;
+        }
+
+        //Grid area, you assign
+
+        & .bio-image {
+            // For some weird reason you can't surround grid area values with quotes
+            grid-area: bioimage;
+        }
+
+        & .bio {
+            background: $lighter-color;
+            border-left: 3px solid $main-color;
+            padding: 10px;
+            grid-area: bio;
+        }
+
+         .award {
+            padding-top: 20px;
+
+            i {
+                color: $main-color;
+                margin: 10px
+            }
+        }
+
+         .award-1 {
+            grid-area: 'aw1';
+        }
+
+         .award-2 {
+            grid-area: 'aw2';
+        }
+
+        .award-3 {
+            grid-area: 'aw3';
+        }
+
+
+    }
+
+    //About B
+    &-b {
+        // Crickets
+    }
+
+    &-c {
+        .about-logo {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            
+            img {
+                width: 70%;
+                // Centers the images
+                justify-self: center;
+            }
+        }
+    }
+
+    &-d {
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            
+            div {
+                img {
+                    border-radius: 50%;
+                    width: 50px;
+                }
+
+                p {
+                    padding: 5px;
+                    border: 2px dashed $lighter-color;
+                }
+
+                ul {
+                    display: flex;
+                    align-items: center;
+                    margin-top: 25px;
+                    li:nth-child(2) {
+                        margin-left: 10px;
+                    }
+                }
+                
+            }
+        }
+    }
+}
 
 //Footer
 
-#main-footer{
+#main-footer {
 
     background: $dark-color;
 
