@@ -50,20 +50,23 @@ input[class^='btn-'] {
         background: $main-color;
         color: set-text-color($main-color);
     }
+
     &-dark {
         background: $dark-color;
-        color: set-text-color($dark-color); 
+        color: set-text-color($dark-color);
     }
+
     &-light {
         background: $light-color;
         color: set-text-color($light-color);
     }
+
     &-medium {
         background: $medium-color;
         color: set-text-color($medium-color);
     }
 
-    
+
 }
 
 .lead {
@@ -118,14 +121,14 @@ input[class^='btn-'] {
 // Line function
 
 .line {
-        width: 8rem;
-        height: 2px;
-        background-color: $main-color;
-        // Be sure to make it block
-        display: block;
-        //Again, this is the code that centers it. No need to mess with containers/flex/grid etc
-        margin: 7px auto;
-    }
+    width: 8rem;
+    height: 2px;
+    background-color: $main-color;
+    // Be sure to make it block
+    display: block;
+    //Again, this is the code that centers it. No need to mess with containers/flex/grid etc
+    margin: 7px auto;
+}
 
 // Sections titles
 
@@ -155,9 +158,3 @@ input[class^='btn-'] {
         border-radius: 5px;
     }
 }
-
-
-
-
-
-

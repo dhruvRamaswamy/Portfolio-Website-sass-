@@ -157,6 +157,7 @@ img {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
 
+
             li {
                 line-height: 2;
 
@@ -200,7 +201,7 @@ img {
                 position: absolute;
                 top: -5px;
                 right: -5px;
-                font-size: 28px;
+                font-size: 1.5rem;
                 background: $main-color;
                 border-radius: 50%;
                 height: 15px;
@@ -246,6 +247,7 @@ img {
 //About Sections
 
 #about {
+
     //About A
     &-a {
         & .about-info {
@@ -261,6 +263,7 @@ img {
         & .bio-image {
             // For some weird reason you can't surround grid area values with quotes
             grid-area: bioimage;
+            align-self: center;
         }
 
         & .bio {
@@ -270,7 +273,7 @@ img {
             grid-area: bio;
         }
 
-         .award {
+        .award {
             padding-top: 20px;
 
             i {
@@ -279,11 +282,11 @@ img {
             }
         }
 
-         .award-1 {
+        .award-1 {
             grid-area: 'aw1';
         }
 
-         .award-2 {
+        .award-2 {
             grid-area: 'aw2';
         }
 
@@ -304,7 +307,7 @@ img {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
-            
+
             img {
                 width: 70%;
                 // Centers the images
@@ -318,8 +321,9 @@ img {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
-            
+
             div {
+
                 img {
                     border-radius: 50%;
                     width: 50px;
@@ -334,13 +338,90 @@ img {
                     display: flex;
                     align-items: center;
                     margin-top: 25px;
+                    margin-bottom: 25px;
+
                     li:nth-child(2) {
                         margin-left: 10px;
                     }
                 }
-                
+
             }
         }
+    }
+}
+
+//Contact 
+
+#contact {
+    &-a {
+        .text-fields {
+            display: grid;
+            grid-template-areas:
+                'name email'
+                'subject phone'
+                'message message';
+            grid-gap: 1.2rem;
+            margin-bottom: 1.2rem;
+            font-family: 'Dosis', sans-serif;
+
+            input,
+            textarea {
+                font-family: 'Dosis', sans-serif;
+
+            }
+
+            //Grid Area
+
+            .name-input {
+                grid-area: name;
+            }
+
+            .subject-input {
+                grid-area: subject;
+            }
+
+            .email-input {
+                grid-area: email;
+            }
+
+            .phone-input {
+                grid-area: phone;
+            }
+
+            .message-input {
+                grid-area: message;
+                height: 100px;
+            }
+
+            .text-input {
+                padding: 0.5rem 1rem;
+            }
+        }
+
+        button[type='submit'] {
+            width: 200px;
+            font-family: 'Dosis', sans-serif;
+        }
+    }
+
+    &-b {
+        .container {
+            display: grid;
+            text-align: center;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        h3 {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    }
+
+    &-c {
+        h1 {
+            font-size: 5rem;
+        }
+
     }
 }
 
@@ -350,18 +431,23 @@ img {
 
     background: $dark-color;
 
-    & .footer-content {
+    .footer-content {
         display: grid;
         grid-template-columns: 1fr 1fr;
         justify-content: space-between;
         color: white;
-        height: 6rem;
         align-items: center;
 
+        .social,
+        p {
+            padding: 20px;
+        }
+
         //Social media icons
-        & .fa-brands {
+        .fa-brands {
             color: white;
-            margin-right: 1rem;
+            margin-right: 0.5rem;
+            margin-left: 0.5rem;
             padding: 0.5rem;
             line-height: 100%;
             transition: all 0.2s ease-in;
@@ -372,9 +458,12 @@ img {
 
         }
 
-        & .social {
+        .social {
             display: flex;
             justify-content: flex-end;
         }
     }
 }
+
+
+@import 'media';

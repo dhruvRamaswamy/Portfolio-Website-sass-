@@ -1,0 +1,263 @@
+// Tablets & Smaller
+@media (max-width: 950px) {
+    #header-home {
+        height: 30rem;
+
+        .header-content {
+            padding-top: 5rem;
+        }
+    }
+
+    #about-d .testimonials,
+    #home-a .specials,
+    #home-b .stats,
+    #home-c .process {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #home {
+        &-b {
+            .stats {
+
+                // This checkers the thing
+                div:nth-child(1),
+                div:nth-child(4) {
+                    background: $lighter-color;
+                }
+
+                div:nth-child(2),
+                div:nth-child(3) {
+                    background: $medium-color;
+                }
+            }
+        }
+    }
+
+    #about {
+        &-a {
+            .about-info {
+                grid-template-areas:
+                    'bioimage bioimage bioimage'
+                    'bio bio bio'
+                    'aw1 aw2 aw3';
+            }
+        }
+
+        &-d {
+            .testimonials {}
+        }
+    }
+
+    @media only screen and (max-width: 750px) {
+
+        #header {
+            &-home {
+                height: 10rem;
+                border-bottom: 3px solid $main-color;
+                background-position: 20% 30%;
+
+                .header-content {
+                    //Getting rid of the javascript effect
+                    display: none;
+                }
+
+            }
+
+            &-inner {
+                height: 10rem;
+            }
+        }
+
+
+        #main-nav {
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 20px;
+
+            ul {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+
+                li {
+                    margin: 0;
+                    padding: 0 20px;
+                    // flex-basis: 1fr;
+                }
+            }
+        }
+
+        .items {
+            grid-template-columns: repeat(2, 1fr);
+
+            .item:nth-child(9) {
+                grid-column: 1 / span 2;
+            }
+        }
+
+        #about {
+            &-c {
+                .about-logo {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+        }
+
+
+        #main-footer {
+            .footer-content {
+                grid-template-columns: 1fr;
+
+
+                &>* {
+                    justify-self: center;
+                }
+
+                .social {
+                    padding-top: 0;
+                }
+            }
+
+        }
+    }
+
+    // Smartphones
+    @media only screen and (max-width: 550px) {
+
+        // Stack Grid Columns
+        #home-a .specials,
+        #home-b .stats,
+        #home-c .process,
+        #contact-b .contact-info,
+        #about-d .testimonials,
+        .items {
+            grid-template-columns: 1fr;
+        }
+
+        // Home
+        #home {
+            &-a {
+                .specials div {
+                    border-bottom: 1px $light-color solid;
+                    padding-bottom: 1rem;
+
+                    &:last-child {
+                        border: none;
+                        padding-bottom: 0;
+                    }
+                }
+            }
+
+            &-b {
+                .stats {
+
+                    // This checkers the thing
+                    div:nth-child(1),
+                    div:nth-child(3) {
+                        background: $lighter-color;
+                    }
+
+                    div:nth-child(2),
+                    div:nth-child(4) {
+                        background: $medium-color;
+                    }
+
+                    div {
+                        padding: 2rem 0 1rem 0;
+
+                    }
+                }
+
+            }
+        }
+
+        // About
+        #about {
+            &-a {
+                .about-info {
+                    grid-template-areas:
+                        'bioimage'
+                        'bio'
+                        'aw1'
+                        'aw2'
+                        'aw3';
+                }
+            }
+        }
+
+        // Contact
+        #contact {
+            &-a {
+                .text-fields {
+                    grid-template-areas:
+                        'name'
+                        'subject'
+                        'email'
+                        'phone'
+                        'message';
+                }
+            }
+
+            &-b {
+                .container {
+                    grid-template-columns: 1fr;
+
+                    div:nth-child(2) {
+                        padding: 55px 0;
+                    }
+                }
+            }
+
+
+
+            &-c {
+                h1 {
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 500px) {
+        #main-nav {
+            ul {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+
+                li {
+                    justify-self: center;
+                    padding: 5px
+                }
+
+            }
+        }
+
+        #header {
+
+            &-inner,
+            &-home {
+                height: 12rem !important;
+            }
+        }
+
+    }
+
+    // Landscape
+    @media only screen and (max-height: 580px) {
+        #header-home {
+            .header-content {
+                padding-top: 3rem;
+            }
+        }
+    }
+
+    @media only screen and (max-height: 330px) {
+        #header-home {
+            .header-content {
+                h1 {
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+}
